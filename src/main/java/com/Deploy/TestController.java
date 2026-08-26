@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
-public class TestController
-{
-    @GetMapping("/test")
-    public ResponseEntity testing()
-    {
-        return new ResponseEntity("Testing Docker/CICD", HttpStatus.OK);
+@RequestMapping("/api/testing")
+public class TestController {
+
+    @GetMapping
+    public ResponseEntity<String> testing() {
+        return ResponseEntity.ok("Testing Docker/CICD");
     }
 }
